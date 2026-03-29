@@ -24,7 +24,7 @@ const DEMO_USER: User = {
   phone: "+880 1712-345678",
   avatar: "",
   joinDate: "2026-01-15",
-  purchasedCourses: [],
+  purchasedCourses: ["recorded"],
 };
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
