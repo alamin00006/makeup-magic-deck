@@ -15,7 +15,7 @@ const Payment = () => {
   const courseId = params.get("course") || "recorded";
   const course = courses[courseId] || courses.recorded;
   const { user, purchaseCourse } = useAuth();
-  const navigate = useNavigate();
+  
   const [step, setStep] = useState<"form" | "processing" | "success">("form");
   const [formData, setFormData] = useState({ name: user?.name || "", phone: "", trxId: "" });
 
