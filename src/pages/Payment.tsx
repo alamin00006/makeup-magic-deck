@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSearchParams, useNavigate, Link } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ShieldCheck, CreditCard, CheckCircle2, ArrowLeft } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
