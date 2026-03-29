@@ -103,10 +103,8 @@ const PricingSection = () => (
               ))}
             </ul>
 
-            <a
-              href="https://www.facebook.com/NigarFashionWorld"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to={`/payment?course=${plan.featured ? 'physical' : 'recorded'}`}
               className={`block w-full py-3.5 font-body font-semibold text-sm tracking-wider uppercase rounded-full text-center transition-colors ${
                 plan.featured
                   ? "bg-primary-foreground text-pink hover:bg-primary-foreground/90"
@@ -114,7 +112,7 @@ const PricingSection = () => (
               }`}
             >
               ভর্তি হোন — Enroll Now
-            </a>
+            </Link>
           </motion.div>
         ))}
       </div>
