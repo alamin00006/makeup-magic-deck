@@ -72,8 +72,8 @@ const PricingSection = () => (
             }`}
           >
             {plan.featured && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gold text-dark font-body text-xs font-bold uppercase tracking-wider rounded-full">
-                Most Popular
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gold text-dark font-body text-xs font-bold uppercase tracking-wider rounded-full shadow-md">
+                ✦ Most Popular
               </span>
             )}
             <div className="flex items-center gap-2 mb-4">

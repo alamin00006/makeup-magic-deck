@@ -29,9 +29,9 @@ const    TestimonialsSection = () => (
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <p className="text-hot-pink font-body text-sm tracking-[0.3em] uppercase mb-3 font-medium">Testimonials</p>
+        <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3 font-medium">Testimonials</p>
         <h2 className="text-3xl md:text-5xl font-display text-primary-foreground">
-          আমাদের <em className="italic text-hot-pink">স্টুডেন্টরা</em> কি বলছে
+          আমাদের <em className="italic text-gold">স্টুডেন্টরা</em> কি বলছে
         </h2>
       </motion.div>
 

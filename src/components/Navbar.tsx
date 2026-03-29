@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoImg from "@/assets/logo-nigar.jpg";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -41,7 +42,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <span className="font-display text-xl font-bold text-pink">Nigar</span>
+          <img src={logoImg} alt="Nigar Fashion World Logo" className="w-10 h-10 rounded-full object-cover border-2 border-gold" />
+          <span className="font-display text-xl font-bold text-gold">Nigar</span>
           <span className={`font-display text-xl ${scrolled ? 'text-foreground' : 'text-primary-foreground'}`}>Fashion World</span>
         </Link>
 

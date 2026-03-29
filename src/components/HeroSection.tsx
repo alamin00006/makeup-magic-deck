@@ -21,11 +21,11 @@ const HeroSection = () => (
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="max-w-2xl"
       >
-        <p className="text-hot-pink font-body text-sm tracking-[0.3em] uppercase mb-4 font-medium">
-          Nigar Fashion World
+        <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-4 font-medium">
+          ✦ Nigar Fashion World ✦
         </p>
         <h1 className="text-5xl md:text-7xl font-display text-primary-foreground leading-[1.1] mb-6">
-          Master the Art of <em className="italic text-hot-pink">Beauty</em>
+          Master the Art of <em className="italic text-gold">Beauty</em>
         </h1>
         <p className="text-primary-foreground/80 font-body text-lg md:text-xl leading-relaxed mb-4 max-w-lg">
           প্রফেশনাল মেকআপ শিখুন আমাদের এক্সপার্ট ট্রেইনারদের কাছ থেকে। 
@@ -37,7 +37,7 @@ const HeroSection = () => (
         <div className="flex flex-col sm:flex-row gap-4">
           <a
             href="#courses"
-            className="inline-flex items-center justify-center px-8 py-4 bg-pink text-primary-foreground font-body font-semibold text-sm tracking-wider uppercase rounded-full hover:bg-hot-pink transition-colors duration-300 shadow-lg"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gold text-dark font-body font-semibold text-sm tracking-wider uppercase rounded-full hover:bg-yellow transition-colors duration-300 shadow-lg"
           >
             View Courses
           </a>
