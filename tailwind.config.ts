@@ -59,7 +59,16 @@ export default {
         magenta: "hsl(var(--magenta))",
         blush: "hsl(var(--blush))",
         'hot-pink': "hsl(var(--hot-pink))",
-        gold: "hsl(var(--gold))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+          dark: "hsl(var(--gold-dark))",
+        },
+        yellow: {
+          DEFAULT: "hsl(var(--yellow))",
+          light: "hsl(var(--yellow-light))",
+          dark: "hsl(var(--yellow-dark))",
+        },
         dark: "hsl(var(--dark))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

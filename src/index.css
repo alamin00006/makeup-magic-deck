@@ -36,15 +36,20 @@
 
     --radius: 0.75rem;
 
-    /* Brand colors */
+    /* Brand colors — yellow from logo + pink */
     --pink: 330 70% 50%;
     --pink-light: 340 60% 92%;
     --pink-dark: 330 65% 35%;
     --magenta: 320 80% 45%;
-    --blush: 350 40% 96%;
+    --blush: 50 80% 96%;
     --hot-pink: 335 80% 58%;
-    --gold: 38 70% 55%;
+    --gold: 50 95% 55%;
+    --gold-light: 50 90% 88%;
+    --gold-dark: 48 85% 42%;
     --dark: 330 25% 15%;
+    --yellow: 50 100% 62%;
+    --yellow-light: 50 100% 92%;
+    --yellow-dark: 48 90% 45%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
