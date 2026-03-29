@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import {620 as Sp, Video, Award, Users, BookOpen, Heart } from "lucide-react";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Video, Award, Users, BookOpen, Heart } from "lucide-react";
 
 const features = [
   { icon: Video, title: "HD ভিডিও লেসন", titleEn: "HD Video Lessons", desc: "প্রতিটি স্টেপ পরিষ্কারভাবে বোঝানো হয়েছে প্রফেশনাল ভিডিওতে।" },
