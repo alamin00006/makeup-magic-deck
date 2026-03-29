@@ -37,7 +37,7 @@ const HeroSection = () => (
         <div className="flex flex-col sm:flex-row gap-4">
           <a
             href="#courses"
-            className="inline-flex items-center justify-center px-8 py-4 bg-pink text-primary-foreground font-body font-semibold text-sm tracking-wider uppercase rounded-full hover:bg-hot-pink transition-colors duration-300 shadow-lg"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gold text-dark font-body font-semibold text-sm tracking-wider uppercase rounded-full hover:bg-yellow transition-colors duration-300 shadow-lg"
           >
             View Courses
           </a>

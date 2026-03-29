@@ -6,7 +6,7 @@ const FooterSection = () => (
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="text-center md:text-left">
           <p className="font-display text-xl text-primary-foreground mb-1">
-            <span className="text-hot-pink">Nigar</span> Fashion World
+            <span className="text-gold">Nigar</span> Fashion World
           </p>
           <p className="text-primary-foreground/50 font-body text-xs tracking-wider">
             প্রফেশনাল মেকআপ কোর্স

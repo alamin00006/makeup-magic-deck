@@ -63,7 +63,7 @@ const CoursesSection = () => (
                 height={600}
               />
               <div className="absolute top-4 left-4">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pink text-primary-foreground font-body text-xs font-semibold rounded-full uppercase tracking-wider">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gold text-dark font-body text-xs font-semibold rounded-full uppercase tracking-wider">
                   <course.icon className="w-3.5 h-3.5" />
                   {course.tag}
                 </span>
