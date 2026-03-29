@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { PlayCircle, Lock, ChevronRight } from "lucide-react";
+import { PlayCircle, Lock, ChevronRight, ChevronLeft, SkipForward, SkipBack } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { useAuth } from "@/contexts/AuthContext";
