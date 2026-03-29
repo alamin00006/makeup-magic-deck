@@ -12,8 +12,17 @@ export default {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      display: ['"Playfair Display"', 'serif'],
+      body: ['Inter', 'sans-serif'],
+    },
     extend: {
       colors: {
+        'rose-gold': 'hsl(var(--rose-gold))',
+        cream: 'hsl(var(--cream))',
+        burgundy: 'hsl(var(--burgundy))',
+        champagne: 'hsl(var(--champagne))',
+        gold: 'hsl(var(--gold))',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
