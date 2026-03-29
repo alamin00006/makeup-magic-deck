@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
 import { motion, AnimatePresence } from "framer-motion";
 import logoImg from "@/assets/logo-nigar.jpg";
 
@@ -9,6 +10,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const { user } = useAuth();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -68,13 +70,32 @@ const Navbar = () => {
           >
             Details
           </Link>
-          <a
-            href="#pricing"
-            onClick={(e) => { e.preventDefault(); scrollTo("pricing"); }}
+          {user ? (
+            <Link
+              to="/profile"
+              className={`flex items-center gap-1.5 font-body text-xs tracking-[0.15em] uppercase transition-colors ${
+                scrolled ? 'text-muted-foreground hover:text-pink' : 'text-primary-foreground/80 hover:text-primary-foreground'
+              }`}
+            >
+              <User className="w-4 h-4" />
+              Profile
+            </Link>
+          ) : (
+            <Link
+              to="/login"
+              className={`font-body text-xs tracking-[0.15em] uppercase transition-colors ${
+                scrolled ? 'text-muted-foreground hover:text-pink' : 'text-primary-foreground/80 hover:text-primary-foreground'
+              }`}
+            >
+              Login
+            </Link>
+          )}
+          <Link
+            to="/payment?course=recorded"
             className="px-5 py-2.5 bg-pink text-primary-foreground font-body font-semibold text-xs tracking-wider uppercase rounded-full hover:bg-hot-pink transition-colors shadow-md"
           >
             Enroll Now
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -113,13 +134,30 @@ const Navbar = () => {
               >
                 Details
               </Link>
-              <a
-                href="#pricing"
-                onClick={(e) => { e.preventDefault(); scrollTo("pricing"); }}
+              {user ? (
+                <Link
+                  to="/profile"
+                  onClick={() => setMobileOpen(false)}
+                  className="text-muted-foreground hover:text-pink font-body text-sm tracking-wider uppercase transition-colors flex items-center gap-2"
+                >
+                  <User className="w-4 h-4" /> Profile
+                </Link>
+              ) : (
+                <Link
+                  to="/login"
+                  onClick={() => setMobileOpen(false)}
+                  className="text-muted-foreground hover:text-pink font-body text-sm tracking-wider uppercase transition-colors"
+                >
+                  Login
+                </Link>
+              )}
+              <Link
+                to="/payment?course=recorded"
+                onClick={() => setMobileOpen(false)}
                 className="mt-2 text-center px-5 py-3 bg-pink text-primary-foreground font-body font-semibold text-sm tracking-wider uppercase rounded-full"
               >
                 Enroll Now
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
