@@ -21,8 +21,8 @@ const HeroSection = () => (
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="max-w-2xl"
       >
-        <p className="text-hot-pink font-body text-sm tracking-[0.3em] uppercase mb-4 font-medium">
-          Nigar Fashion World
+        <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-4 font-medium">
+          ✦ Nigar Fashion World ✦
         </p>
         <h1 className="text-5xl md:text-7xl font-display text-primary-foreground leading-[1.1] mb-6">
           Master the Art of <em className="italic text-hot-pink">Beauty</em>
