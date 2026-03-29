@@ -108,7 +108,52 @@ const Videos = () => {
                   )}
                 </motion.div>
                 <h2 className="font-display text-xl text-foreground mb-1">{activeVideo.title}</h2>
-                <p className="text-muted-foreground font-body text-sm">{activeVideo.titleEn} — {activeVideo.duration}</p>
+                <p className="text-muted-foreground font-body text-sm mb-4">{activeVideo.titleEn} — {activeVideo.duration}</p>
+
+                {/* Prev / Next buttons */}
+                <div className="flex items-center justify-between">
+                  <button
+                    onClick={() => {
+                      const allVideos = modules.flatMap((m) => m.videos);
+                      const idx = allVideos.findIndex((v) => v.title === activeVideo.title);
+                      if (idx > 0) {
+                        const prev = allVideos[idx - 1];
+                        if (canWatch(prev.free)) {
+                          setActiveVideo(prev);
+                          const modIdx = modules.findIndex((m) => m.videos.includes(prev));
+                          setActiveModuleIdx(modIdx);
+                        }
+                      }
+                    }}
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-pink-light text-foreground font-body text-sm hover:bg-blush transition-colors disabled:opacity-40"
+                    disabled={modules.flatMap((m) => m.videos).findIndex((v) => v.title === activeVideo.title) === 0}
+                  >
+                    <SkipBack className="w-4 h-4" />
+                    Previous
+                  </button>
+                  <span className="text-muted-foreground font-body text-xs">
+                    {modules.flatMap((m) => m.videos).findIndex((v) => v.title === activeVideo.title) + 1} / {modules.flatMap((m) => m.videos).length}
+                  </span>
+                  <button
+                    onClick={() => {
+                      const allVideos = modules.flatMap((m) => m.videos);
+                      const idx = allVideos.findIndex((v) => v.title === activeVideo.title);
+                      if (idx < allVideos.length - 1) {
+                        const next = allVideos[idx + 1];
+                        if (canWatch(next.free)) {
+                          setActiveVideo(next);
+                          const modIdx = modules.findIndex((m) => m.videos.includes(next));
+                          setActiveModuleIdx(modIdx);
+                        }
+                      }
+                    }}
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-pink text-primary-foreground font-body text-sm font-semibold hover:bg-hot-pink transition-colors disabled:opacity-40"
+                    disabled={modules.flatMap((m) => m.videos).findIndex((v) => v.title === activeVideo.title) === modules.flatMap((m) => m.videos).length - 1}
+                  >
+                    Next
+                    <SkipForward className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
 
               {/* Sidebar playlist */}
