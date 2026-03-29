@@ -70,13 +70,32 @@ const Navbar = () => {
           >
             Details
           </Link>
-          <a
-            href="#pricing"
-            onClick={(e) => { e.preventDefault(); scrollTo("pricing"); }}
+          {user ? (
+            <Link
+              to="/profile"
+              className={`flex items-center gap-1.5 font-body text-xs tracking-[0.15em] uppercase transition-colors ${
+                scrolled ? 'text-muted-foreground hover:text-pink' : 'text-primary-foreground/80 hover:text-primary-foreground'
+              }`}
+            >
+              <User className="w-4 h-4" />
+              Profile
+            </Link>
+          ) : (
+            <Link
+              to="/login"
+              className={`font-body text-xs tracking-[0.15em] uppercase transition-colors ${
+                scrolled ? 'text-muted-foreground hover:text-pink' : 'text-primary-foreground/80 hover:text-primary-foreground'
+              }`}
+            >
+              Login
+            </Link>
+          )}
+          <Link
+            to="/payment?course=recorded"
             className="px-5 py-2.5 bg-pink text-primary-foreground font-body font-semibold text-xs tracking-wider uppercase rounded-full hover:bg-hot-pink transition-colors shadow-md"
           >
             Enroll Now
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
