@@ -10,6 +10,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const { user } = useAuth();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
