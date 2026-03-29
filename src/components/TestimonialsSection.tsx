@@ -3,24 +3,25 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sophie Laurent",
-    role: "Freelance MUA",
-    text: "This course completely transformed my career. Within 3 months of graduating, I was fully booked with bridal clients.",
+    name: "ফারহানা আক্তার",
+    role: "রেকর্ডেড কোর্স স্টুডেন্ট",
+    text: "ঘরে বসে এত সুন্দরভাবে মেকআপ শিখতে পারব ভাবতেই পারিনি! ভিডিওগুলো অনেক সহজ এবং বোঝা যায়।",
   },
   {
-    name: "Amara Chen",
-    role: "Beauty Influencer",
-    text: "The techniques I learned here took my content to the next level. My audience can see the professional difference.",
+    name: "তাসনিম জাহান",
+    role: "ফিজিক্যাল কোর্স স্টুডেন্ট",
+    text: "ফিজিক্যাল ক্লাসে হাতে-কলমে শেখার,"
+      + " অভিজ্ঞতা অসাধারণ ছিল। নিগার আপু খুব ধৈর্য ধরে সবকিছু শেখান।",
   },
   {
-    name: "Isabella Rossi",
-    role: "Salon Owner",
-    text: "I invested in this course for my entire team. The curriculum is thorough, modern, and incredibly well-taught.",
+    name: "মাহিয়া মিম",
+    role: "রেকর্ডেড কোর্স স্টুডেন্ট",    
+    text: "বাজেট ফ্রেন্ডলি প্রোডাক্ট দিয়ে এত সুন্দর মেকআপ করা যায় — এটা এই কোর্স থেকেই শিখেছি!",
   },
 ];
 
-const TestimonialsSection = () => (
-  <section className="py-24 bg-burgundy">
+const    TestimonialsSection = () => (
+  <section id="testimonials" className="py-24 bg-dark">
     <div className="container mx-auto px-6">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -28,9 +29,9 @@ const TestimonialsSection = () => (
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <p className="text-rose-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Testimonials</p>
-        <h2 className="text-3xl md:text-5xl font-display text-cream">
-          Loved by <em className="italic text-rose-gold">Artists</em>
+        <p className="text-hot-pink font-body text-sm tracking-[0.3em] uppercase mb-3 font-medium">Testimonials</p>
+        <h2 className="text-3xl md:text-5xl font-display text-primary-foreground">
+          আমাদের <em className="italic text-hot-pink">স্টুডেন্টরা</em> কি বলছে
         </h2>
       </motion.div>
 
@@ -42,19 +43,19 @@ const TestimonialsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
-            className="bg-cream/5 backdrop-blur-sm border border-cream/10 rounded-sm p-8"
+            className="bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 rounded-2xl p-8"
           >
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, j) => (
                 <Star key={j} className="w-4 h-4 fill-gold text-gold" />
               ))}
             </div>
-            <p className="text-champagne/90 font-body text-sm leading-relaxed mb-6 italic">
+            <p className="text-primary-foreground/80 font-body text-sm leading-relaxed mb-6">
               "{t.text}"
             </p>
             <div>
-              <p className="text-cream font-display text-base">{t.name}</p>
-              <p className="text-rose-gold/70 font-body text-xs tracking-wider uppercase">{t.role}</p>
+              <p className="text-primary-foreground font-display text-base">{t.name}</p>
+              <p className="text-hot-pink/70 font-body text-xs tracking-wider">{t.role}</p>
             </div>
           </motion.div>
         ))}

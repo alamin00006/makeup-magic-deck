@@ -25,8 +25,8 @@ const Navbar = () => {
   };
 
   const navLinks = [
+    { label: "Courses", action: () => scrollTo("courses") },
     { label: "Features", action: () => scrollTo("features") },
-    { label: "Curriculum", action: () => scrollTo("curriculum") },
     { label: "Testimonials", action: () => scrollTo("testimonials") },
     { label: "Pricing", action: () => scrollTo("pricing") },
   ];
@@ -35,13 +35,14 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-burgundy/95 backdrop-blur-md shadow-lg py-3"
+          ? "bg-card/95 backdrop-blur-md shadow-lg py-3 border-b border-pink-light"
           : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="font-display text-xl text-cream tracking-wide">
-          Glow Academy
+        <Link to="/" className="flex items-center gap-2">
+          <span className="font-display text-xl font-bold text-pink">Nigar</span>
+          <span className={`font-display text-xl ${scrolled ? 'text-foreground' : 'text-primary-foreground'}`}>Fashion World</span>
         </Link>
 
         {/* Desktop */}
@@ -50,24 +51,25 @@ const Navbar = () => {
             <button
               key={link.label}
               onClick={link.action}
-              className="text-champagne/80 hover:text-cream font-body text-xs tracking-[0.15em] uppercase transition-colors"
+              className={`font-body text-xs tracking-[0.15em] uppercase transition-colors ${
+                scrolled ? 'text-muted-foreground hover:text-pink' : 'text-primary-foreground/80 hover:text-primary-foreground'
+              }`}
             >
               {link.label}
             </button>
           ))}
           <Link
             to="/details"
-            className="text-champagne/80 hover:text-cream font-body text-xs tracking-[0.15em] uppercase transition-colors"
+            className={`font-body text-xs tracking-[0.15em] uppercase transition-colors ${
+              scrolled ? 'text-muted-foreground hover:text-pink' : 'text-primary-foreground/80 hover:text-primary-foreground'
+            }`}
           >
             Details
           </Link>
           <a
             href="#pricing"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollTo("pricing");
-            }}
-            className="px-5 py-2 bg-gold text-burgundy font-body font-semibold text-xs tracking-wider uppercase rounded-sm hover:bg-rose-gold transition-colors"
+            onClick={(e) => { e.preventDefault(); scrollTo("pricing"); }}
+            className="px-5 py-2.5 bg-pink text-primary-foreground font-body font-semibold text-xs tracking-wider uppercase rounded-full hover:bg-hot-pink transition-colors shadow-md"
           >
             Enroll Now
           </a>
@@ -76,7 +78,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-cream"
+          className={`md:hidden ${scrolled ? 'text-foreground' : 'text-primary-foreground'}`}
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -90,14 +92,14 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-burgundy/95 backdrop-blur-md overflow-hidden"
+            className="md:hidden bg-card/98 backdrop-blur-md overflow-hidden border-b border-pink-light"
           >
             <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <button
                   key={link.label}
                   onClick={link.action}
-                  className="text-champagne/80 hover:text-cream font-body text-sm tracking-wider uppercase text-left transition-colors"
+                  className="text-muted-foreground hover:text-pink font-body text-sm tracking-wider uppercase text-left transition-colors"
                 >
                   {link.label}
                 </button>
@@ -105,17 +107,14 @@ const Navbar = () => {
               <Link
                 to="/details"
                 onClick={() => setMobileOpen(false)}
-                className="text-champagne/80 hover:text-cream font-body text-sm tracking-wider uppercase transition-colors"
+                className="text-muted-foreground hover:text-pink font-body text-sm tracking-wider uppercase transition-colors"
               >
                 Details
               </Link>
               <a
                 href="#pricing"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollTo("pricing");
-                }}
-                className="mt-2 text-center px-5 py-3 bg-gold text-burgundy font-body font-semibold text-sm tracking-wider uppercase rounded-sm"
+                onClick={(e) => { e.preventDefault(); scrollTo("pricing"); }}
+                className="mt-2 text-center px-5 py-3 bg-pink text-primary-foreground font-body font-semibold text-sm tracking-wider uppercase rounded-full"
               >
                 Enroll Now
               </a>
